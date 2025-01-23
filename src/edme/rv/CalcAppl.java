@@ -42,9 +42,6 @@ public class CalcAppl {
 			res = a * b;
 		}
 		if (input.contains("/")) {
-			if (b == 0) {
-				throw new ArithmeticException("Dividing by zero is  not allowed");
-			}
 			res = a / b;
 		}
 		String result = res + "";
@@ -52,7 +49,7 @@ public class CalcAppl {
 	}
 
 	public static boolean isValidExpression(String input) {
-		String regex = "^(10|[0-9])\\s*[\\+\\-\\*/]\\s*(10|[0-9])$";
+		String regex = "^(10|[1-9])\\s*[\\+\\-\\*/]\\s*(10|[1-9])$";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(input);
 		return matcher.matches();
